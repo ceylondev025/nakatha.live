@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>අවුරුදු 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;600;700&family=Noto+Sans+Tamil:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+<style>
+  :root {
+    --gold: #C9933A;
+    --gold-light: #F5D98B;
+    --gold-pale: #FDF5E0;
+    --deep: #1A0D00;
+    --warm-brown: #3D1F00;
+    --ochre: #8B5E0A;
+    --cream: #FBF5E8;
+    --text-main: #2A1400;
+    --text-muted: #6B4C2A;
+    --red: #B83232;
+    --green-dark: #2D5A1B;
+    --divider: rgba(201,147,58,0.25);
+    --shadow: 0 4px 24px rgba(60,20,0,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-main);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-bar {
+    background: var(--deep);
+    padding: 8px 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(201,147,58,0.4);
+    color: var(--gold-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--gold);
+    color: var(--deep);
+    border-color: var(--gold);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px 70px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,147,58,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 80%, rgba(184,50,50,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .mandala-top {
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 320px;
+    opacity: 0.07;
+  }
+  .hero-tagline {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    color: #fff;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .hero-title .gold { color: var(--gold-light); }
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+  .lang-sinhala { font-family: 'Noto Sans Sinhala', sans-serif; }
+  .lang-tamil { font-family: 'Noto Sans Tamil', sans-serif; }
+
+  /* ── COUNTDOWN ── */
+  .countdown-wrap {
+    display: inline-flex;
+    gap: 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,147,58,0.3);
+    border-radius: 16px;
+    padding: 24px 32px;
+  }
+  .cd-unit {
+    text-align: center;
+    min-width: 64px;
+  }
+  .cd-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1;
+    display: block;
+  }
+  .cd-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    display: block;
+  }
+  .cd-sep {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: rgba(201,147,58,0.5);
+    align-self: center;
+    padding-bottom: 8px;
+  }
+  .hero-new-year-time {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+  }
+  .hero-new-year-time span {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* ── WAVE ── */
+  .wave-sep {
+    background: var(--deep);
+    line-height: 0;
+  }
+  .wave-sep svg { display: block; width: 100%; }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-tag {
+    display: inline-block;
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,147,58,0.35);
+    color: var(--ochre);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    color: var(--warm-brown);
+    line-height: 1.15;
+  }
+  .section-subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── NAKATH CARDS ── */
+  .nakath-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .nakath-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--divider);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nakath-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(60,20,0,0.14);
+  }
+  .nakath-card-header {
+    background: linear-gradient(135deg, var(--warm-brown) 0%, var(--deep) 100%);
+    padding: 18px 20px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nakath-icon {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(201,147,58,0.2);
+    border: 1px solid rgba(201,147,58,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .nakath-card-title {
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .nakath-card-title-sub {
+    color: rgba(245,217,139,0.55);
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 300;
+  }
+  .nakath-card-body {
+    padding: 18px 20px;
+  }
+  .nakath-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,147,58,0.25);
+    color: var(--ochre);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .meta-pill.date { background: #FFF0E8; border-color: rgba(184,50,50,0.2); color: var(--red); }
+  .meta-pill.dir { background: #EFF5EB; border-color: rgba(45,90,27,0.2); color: var(--green-dark); }
+  .nakath-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+  .nakath-desc.si { font-family: 'Noto Sans Sinhala', sans-serif; font-size: 13px; line-height: 1.8; }
+  .nakath-desc.ta { font-family: 'Noto Sans Tamil', sans-serif; font-size: 13px; line-height: 1.8; }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 20px;
+    opacity: 0.5;
+    margin: 12px 0 0;
+    letter-spacing: 6px;
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    background: linear-gradient(to right, var(--warm-brown), #4A2800, var(--warm-brown));
+    padding: 48px 24px;
+    text-align: center;
+    color: #fff;
+  }
+  .intro-strip p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+  }
+  .intro-strip p.si { font-family: 'Noto Sans Sinhala', sans-serif; font-size: 14px; line-height: 2; }
+  .intro-strip p.ta { font-family: 'Noto Sans Tamil', sans-serif; font-size: 14px; line-height: 2; }
+  .intro-strip .intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  footer .gold { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .countdown-wrap { gap: 8px; padding: 18px 16px; }
+    .cd-num { font-size: 36px; }
+    .cd-sep { font-size: 28px; }
+    .nakath-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── LANG DISPLAY ── */
+  [data-lang] { display: none; }
+  body[data-active-lang="en"] [data-lang="en"] { display: block; }
+  body[data-active-lang="si"] [data-lang="si"] { display: block; }
+  body[data-active-lang="ta"] [data-lang="ta"] { display: block; }
+  body[data-active-lang="en"] .nakath-desc.en,
+  body[data-active-lang="si"] .nakath-desc.si,
+  body[data-active-lang="ta"] .nakath-desc.ta { display: block; }
+  .nakath-desc { display: none; }
+
+  /* Multi-lang inline spans */
+  .ml { display: none; }
+  body[data-active-lang="en"] .ml.en,
+  body[data-active-lang="si"] .ml.si,
+  body[data-active-lang="ta"] .ml.ta { display: inline; }
+
+  /* Pill labels */
+  .pill-label { display: none; }
+  body[data-active-lang="en"] .pill-label.en,
+  body[data-active-lang="si"] .pill-label.si,
+  body[data-active-lang="ta"] .pill-label.ta { display: inline; }
+
+  /* Transitions */
+  .nakath-card, .intro-strip, .section-title { transition: all 0.3s; }
+</style>
+</head>
+<body data-active-lang="en">
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">English</button>
+  <button class="lang-btn" onclick="setLang('si')">සිංහල</button>
+  <button class="lang-btn" onclick="setLang('ta')">தமிழ்</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- decorative mandala SVG -->
+  <svg class="mandala-top" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="140" stroke="#C9933A" stroke-width="1" stroke-dasharray="4 6"/>
+    <circle cx="150" cy="150" r="110" stroke="#C9933A" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <circle cx="150" cy="150" r="80" stroke="#C9933A" stroke-width="1"/>
+    <circle cx="150" cy="150" r="50" stroke="#C9933A" stroke-width="0.5"/>
+    <g stroke="#C9933A" stroke-width="0.5">
+      <line x1="150" y1="10" x2="150" y2="290"/>
+      <line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="51" y1="51" x2="249" y2="249"/>
+      <line x1="249" y1="51" x2="51" y2="249"/>
+      <line x1="10" y1="99" x2="290" y2="201"/>
+      <line x1="10" y1="201" x2="290" y2="99"/>
+      <line x1="99" y1="10" x2="201" y2="290"/>
+      <line x1="201" y1="10" x2="99" y2="290"/>
+    </g>
+    <circle cx="150" cy="150" r="8" fill="#C9933A" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-tagline">
+    <span class="ml en">Sinhala &amp; Tamil New Year</span>
+    <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සිංහල හා දෙමළ අලුත් අවුරුද්ද</span>
+    <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">சிங்கள மற்றும் தமிழ் புத்தாண்டு</span>
+    · 2026
+  </div>
+  <div class="hero-title">
+    <div class="ml en">Avurudu Nakath<br><span class="gold">Auspicious Times</span></div>
+    <div class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif; font-size:clamp(28px,5vw,54px)">
+      අවුරුදු<br><span class="gold">නැකත් 2026</span>
+    </div>
+    <div class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif; font-size:clamp(28px,5vw,54px)">
+      ஆண்டு<br><span class="gold">நட்சத்திரம் 2026</span>
+    </div>
+  </div>
+  <div class="hero-sub" id="cd-event-name">—</div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap" id="countdown">
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-d">--</span>
+      <span class="cd-label">
+        <span class="ml en">Days</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:9px">දින</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:9px">நாட்கள்</span>
+      </span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-h">--</span>
+      <span class="cd-label">
+        <span class="ml en">Hours</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:9px">පැය</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:9px">மணி</span>
+      </span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-m">--</span>
+      <span class="cd-label">
+        <span class="ml en">Minutes</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:9px">මිනිත්තු</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:9px">நிமிடம்</span>
+      </span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-s">--</span>
+      <span class="cd-label">
+        <span class="ml en">Seconds</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:9px">තත්පර</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:9px">விநாடி</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="hero-new-year-time" id="cd-event-time">—</div>
+</div>
+
+<!-- WAVE -->
+<div class="wave-sep">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,48 L0,24 Q180,48 360,24 Q540,0 720,24 Q900,48 1080,24 Q1260,0 1440,24 L1440,48 Z" fill="#FBF5E8"/>
+  </svg>
+</div>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="intro-title">
+    <span class="ml en">A Sacred Transition</span>
+    <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">පවිත්‍ර සංක්‍රාන්තිය</span>
+    <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">புனிதமான மாற்றம்</span>
+  </div>
+
+  <div data-lang="en">
+    <p>Sinhala and Tamil New Year is Sri Lanka's most cherished celebration — a time when the sun transitions from Meena to Mesha Rashi. Each nakath (auspicious moment) carries deep astronomical and cultural significance, guiding families through ancient rituals of bathing, cooking, feasting, and giving — all performed facing the right direction, at the precise moment the stars align.</p>
+  </div>
+  <div data-lang="si">
+    <p class="si">සිංහල හා දෙමළ අලුත් අවුරුද්ද ශ්‍රී ලංකාවේ අතිශය ප්‍රිය සැමරුමකි. සූර්යා මීන රාශියෙන් මේෂ රාශියට ගමන් කරන මෙම සංක්‍රාන්ති අවස්ථාවේ දී, නැකැත් අනුව ස්නාන, ආහාර පිළිස්සීම, ගනුදෙනු, සහ ශ්‍රමදාන ආදී සියලු චාරිත්‍ර නිවැරදි දිශාව බලා, නිශ්චිත මොහොතේ සිදු කෙරේ.</p>
+  </div>
+  <div data-lang="ta">
+    <p class="ta">சிங்கள மற்றும் தமிழ் புத்தாண்டு இலங்கையின் மிகவும் அன்பான கொண்டாட்டம் ஆகும். சூரியன் மீன ராசியிலிருந்து மேஷ ராசிக்கு நகரும் இந்த நேரத்தில், நட்சத்திர நேரங்களின்படி குளியல், சமையல், வேலை தொடங்குதல், உணவு உண்ணுதல் என அனைத்து சடங்குகளும் சரியான திசை நோக்கி சரியான நேரத்தில் செய்யப்படுகின்றன.</p>
+  </div>
+</div>
+
+<!-- NAKATH SECTION -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-tag">
+      <span class="ml en">2026 · Auspicious Timings</span>
+      <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">2026 · නැකැත් වේලා</span>
+      <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">2026 · நட்சத்திர நேரங்கள்</span>
+    </div>
+    <h2 class="section-title">
+      <span class="ml en">Avurudu Nakath</span>
+      <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">අවුරුදු නැකත්</span>
+      <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">ஆண்டு நட்சத்திரங்கள்</span>
+    </h2>
+    <p class="section-subtitle">
+      <span class="ml en">All times are Sri Lanka Standard Time (UTC+5:30)</span>
+      <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සියලු වේලා ශ්‍රී ලංකා සම්මත කාලය (UTC+5:30)</span>
+      <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">அனைத்து நேரங்களும் இலங்கை நேரம் (UTC+5:30)</span>
+    </p>
+    <div class="ornament-divider">✦ ✦ ✦</div>
+  </div>
+
+  <div class="nakath-grid">
+
+    <!-- 1 New Moon -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🌙</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">New Moon Observation</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">නව සඳ බැලීම</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">புத்த சந்திரன் பார்வை</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Solar &amp; Lunar New Year</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සූර්ය හා චන්ද්‍ර නව වර්ෂය</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">சூரிய மற்றும் சந்திர புத்தாண்டு</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Mar 20 (Fri) &amp; Apr 19 (Sun)</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">මාර්. 20 &amp; අප්. 19</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">மார். 20 &amp; ஏப். 19</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">Observe the new moon for the Lunar New Year on Friday, March 20, and for the Solar New Year on Sunday, April 19. This auspicious sighting marks the beginning of a new celestial cycle.</div>
+        <div class="nakath-desc si">අභිනව චන්ද්‍ර වර්ෂය සඳහා මාර්තු 20 සිකුරාදා සහ සූර්ය වර්ෂය සඳහා අප්‍රේල් 19 ඉරිදා නව සඳ බැලීම මැනව.</div>
+        <div class="nakath-desc ta">சந்திர ஆண்டிற்கு மார்ச் 20 வெள்ளி மற்றும் சூரிய ஆண்டிற்கு ஏப்ரல் 19 ஞாயிறு ஆகிய தினங்களில் புத்த சந்திரனை நோக்குவது மங்களகரமானது.</div>
+      </div>
+    </div>
+
+    <!-- 2 Old Year Bath -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🪷</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">Old Year Ritual Bath</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">පරණ අවුරුදු ස්නාන</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">பழைய ஆண்டு குளியல்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Purification before transition</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සංක්‍රාන්තියට ප්‍රථම</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">மாற்றத்திற்கு முன்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">April 13 (Mon)</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 13 සදු</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 13 திங்கள்</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">On Monday, April 13, bathe with water mixed with diwul (wood apple) leaf juice and neem leaves, while remembering your divine protectors. This cleanses the body and spirit before the new year.</div>
+        <div class="nakath-desc si">අප්‍රේල් 13 සදු දින දිවුල් පත් යුෂ සහ නීම් පත් මිශ්‍ර නානු ගා ස්නානය කොට ඉෂ්ට දේවතා අනුස්මරණයේ යෙදී වාසය මැනවි.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 13 திங்கள் அன்று விலாம்பழ இலை சாறு மற்றும் வேப்பிலை கலந்த நீரில் குளித்து, உங்கள் தெய்வங்களை நினைவுகூரவும்.</div>
+      </div>
+    </div>
+
+    <!-- 3 New Year Dawn -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🌅</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">New Year Dawn</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">අලුත් අවුරුදු උදාව</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">புத்தாண்டு உதயம்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">The sacred moment</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ශුභ මොහොත</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">புனித தருணம்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">April 14, 9:32 AM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 14 · පෙ.ව. 9:32</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 14 · காலை 9:32</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">The Sinhala New Year dawns on Tuesday, April 14 at 9:32 AM. At this precise moment, the sun completes its journey through Meena Rashi and enters Mesha Rashi — marking the cosmic new year.</div>
+        <div class="nakath-desc si">අප්‍රේල් 14 අඟහරුවාදා පූර්ව භාග 09:32 ට සිංහල අලුත් අවුරුද්ද උදාවෙයි. සූර්යා මීන රාශියෙන් මේෂ රාශියට ගමන් කරන මෙම ශුභ මොහොතේ නව වර්ෂය ආරම්භ වේ.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 14 செவ்வாய் காலை 9:32 மணிக்கு சிங்கள புத்தாண்டு உதிக்கிறது. இந்த நேரத்தில் சூரியன் மீன ராசியிலிருந்து மேஷ ராசிக்கு நுழைகிறது.</div>
+      </div>
+    </div>
+
+    <!-- 4 Punya Kalaya -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">⏳</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">Punya Kalaya</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">පුණ්‍ය කාලය</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">புண்ணிய காலம்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Sacred rest period</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ශුද්ධ විවේකය</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">புனித ஓய்வு நேரம்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 14 · 3:08 AM – 3:56 PM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">පෙ.ව. 3:08 – ප.ව. 3:56</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">காலை 3:08 – மாலை 3:56</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">The sacred rest period runs from 3:08 AM to 3:56 PM on April 14. Stop all work before 3:08 AM, eat beforehand, and engage in religious observances. All major nakath rituals are performed after 9:32 AM within this window.</div>
+        <div class="nakath-desc si">පූර්ව භාග 03:08 සිට අපර භාග 03:56 දක්වා පුණ්‍ය කාලය. 03:08 ට ප්‍රථම ආහාර ගෙන සියලු වැඩ අත්හැර ආගමික කටයුතු වල යෙදීම මැනවි. ප්‍රධාන නැකත් වේලාවල් 09:32 ට පසු ක්‍රියාත්මක වේ.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 14 அன்று காலை 3:08 முதல் மாலை 3:56 வரை புண்ணிய காலம். 3:08 க்கு முன்பு உணவு உண்டு அனைத்து வேலைகளையும் நிறுத்தி மத சடங்குகளில் ஈடுபடவும்.</div>
+      </div>
+    </div>
+
+    <!-- 5 Cooking -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🍚</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">Lighting the Hearth</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">ආහාර පිසීම</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">உணவு சமைத்தல்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Milk rice &amp; sweets</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">කිරිබත් හා කැවිලි</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">கிரிபත் மற்றும் இனிப்புகள்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 14 · 10:51 AM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 14 · පෙ.ව. 10:51</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 14 · காலை 10:51</span>
+          </span>
+          <span class="meta-pill dir">🧭
+            <span class="pill-label en">Face South</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">දකුණ</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">தெற்கு</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">At 10:51 AM, dressed in red attire, face South and light the hearth. Cook milk rice, sweets, and ghee milk — the auspicious first meal of the new year, offered with love and gratitude.</div>
+        <div class="nakath-desc si">අප්‍රේල් 14 පෙ.ව. 10:51 ට රක්ත වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා ලිප් බැද ගිණි මොලවා කිරිබත්, කැවිලි, සහ දීකිරි පිළිගැන්වීම මැනවි.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 14 காலை 10:51 மணிக்கு சிவப்பு ஆடை அணிந்து தெற்கு நோக்கி அடுப்பு வைத்து கிரிபத், இனிப்புகள் மற்றும் நெய்ப்பால் சமைக்கவும்.</div>
+      </div>
+    </div>
+
+    <!-- 6 First Meal -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🥢</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">First Meal &amp; Commerce</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">ආහාර අනුභවය</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">முதல் உணவு</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Work &amp; transactions begin</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">වැඩ ගනුදෙනු ආරම්භය</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">பணி மற்றும் வர்த்தகம்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 14 · 12:06 PM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 14 · ප.ව. 12:06</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 14 · மதியம் 12:06</span>
+          </span>
+          <span class="meta-pill dir">🧭
+            <span class="pill-label en">Face South</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">දකුණ</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">தெற்கு</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">At 12:06 PM, dressed in red and facing South, commence all work, trade, and partake in the first meal of the year. This marks the official beginning of activity in the new year.</div>
+        <div class="nakath-desc si">ප.ව. 12:06 ට රක්ත වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා සියලු වැඩ ඇල්ලීම, ගනුදෙනු කොට ආහාර අනුභව කිරීම මැනවි.</div>
+        <div class="nakath-desc ta">மதியம் 12:06 மணிக்கு சிவப்பு ஆடை அணிந்து தெற்கு நோக்கி அனைத்து வேலைகளையும் தொடங்கி, வர்த்தகம் செய்து, உணவு உண்ணவும்.</div>
+      </div>
+    </div>
+
+    <!-- 7 Anointing -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🌿</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">Anointing &amp; Bath</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">හිසතෙල් ගෑම</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">எண்ணெய் தேய்த்தல்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Oil anointment with neem</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">කොහොඹ යුෂ</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">வேப்பிலை சாறு</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 15 (Wed) · 6:55 AM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 15 · පෙ.ව. 6:55</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 15 · காலை 6:55</span>
+          </span>
+          <span class="meta-pill dir">🧭
+            <span class="pill-label en">Face East</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">නැගෙනහිර</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">கிழக்கு</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">On Wednesday April 15 at 6:55 AM, face East, dressed in green attire. Place neem leaves on the head, kollan leaves at the feet, and bathe with oil mixed with neem leaf juice — a deeply cleansing tradition.</div>
+        <div class="nakath-desc si">අප්‍රේල් 15 බදාදා පෙ.ව. 6:55 ට නැගෙනහිර දිශාව බලා හිසට කොහොඹ පත්, පයට කොළොන් පත් තබා, පච්ච වස්ත්‍රාභරණයෙන් සැරසී කොහොඹ යුෂ මිශ්‍ර තෙල් ගා ස්නාන කිරීම මැනවි.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 15 புதன் காலை 6:55 மணிக்கு கிழக்கு நோக்கி, பச்சை ஆடை அணிந்து, தலையில் வேப்பிலை வைத்து வேப்பிலை சாறு கலந்த எண்ணெய் தேய்த்து குளிக்கவும்.</div>
+      </div>
+    </div>
+
+    <!-- 8 Going to Work -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">💼</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">First Day at Work</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">රැකී රක්ෂා සඳහා</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">வேலைக்கு புறப்படுதல்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Setting out for livelihood</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ජීවිකාව සඳහා</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">வாழ்வாதாரம்</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 20 (Mon) · 6:27 AM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 20 · පෙ.ව. 6:27</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 20 · காலை 6:27</span>
+          </span>
+          <span class="meta-pill dir">🧭
+            <span class="pill-label en">Face South</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">දකුණ</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">தெற்கு</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">On Monday, April 20 at 6:27 AM, dress in white, eat milk rice and milk sweets, then face South and set out for work or livelihood. A blessed beginning to professional life in the new year.</div>
+        <div class="nakath-desc si">අප්‍රේල් 20 සදු පෙ.ව. 6:27 ට ශ්වේත වස්ත්‍රාභරණයෙන් සැරසී කිරිබත් සහ එළකිරි කැවිලි අනුභව කර දකුණු දිශාව බලා රැකී රක්ෂා සඳහා පිටත් වීම මැනවි.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 20 திங்கள் காலை 6:27 மணிக்கு வெள்ளை ஆடை அணிந்து கிரிபத் மற்றும் பால் இனிப்பு சாப்பிட்டு தெற்கு நோக்கி வேலைக்கு புறப்படவும்.</div>
+      </div>
+    </div>
+
+    <!-- 9 Planting -->
+    <div class="nakath-card">
+      <div class="nakath-card-header">
+        <div class="nakath-icon">🌱</div>
+        <div>
+          <div class="nakath-card-title">
+            <span class="ml en">First Planting</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif;font-size:15px">පැළ සිටුවීම</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif;font-size:15px">நாற்று நடுதல்</span>
+          </div>
+          <div class="nakath-card-title-sub">
+            <span class="ml en">Agricultural blessing</span>
+            <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">කෘෂිකාර්මික ශුභ</span>
+            <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">விவசாய ஆசி</span>
+          </div>
+        </div>
+      </div>
+      <div class="nakath-card-body">
+        <div class="nakath-meta">
+          <span class="meta-pill date">🗓
+            <span class="pill-label en">Apr 23 (Thu) · 11:36 AM</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">අප්. 23 · පෙ.ව. 11:36</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">ஏப். 23 · காலை 11:36</span>
+          </span>
+          <span class="meta-pill dir">🧭
+            <span class="pill-label en">Face North</span>
+            <span class="pill-label si" style="font-family:'Noto Sans Sinhala',sans-serif">උතුර</span>
+            <span class="pill-label ta" style="font-family:'Noto Sans Tamil',sans-serif">வடக்கு</span>
+          </span>
+        </div>
+        <div class="nakath-desc en">On Thursday, April 23 at 11:36 AM, dressed in golden yellow attire, face North and begin planting seedlings. This auspicious time ensures agricultural prosperity and an abundant harvest in the new year.</div>
+        <div class="nakath-desc si">අප්‍රේල් 23 බ්‍රහස්පතින්දා රන්වන් වස්ත්‍රාභරණයෙන් සැරසී පෙ.ව. 11:36 ට උතුරු දිශාව බලා පැළ සිටුවීම මැනවි.</div>
+        <div class="nakath-desc ta">ஏப்ரல் 23 வியாழன் காலை 11:36 மணிக்கு தங்க நிற ஆடை அணிந்து வடக்கு நோக்கி நாற்று நடவும். இது விளைச்சல் வளத்தை உறுதி செய்யும்.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- QUICK REFERENCE TABLE -->
+<div style="background: var(--warm-brown); padding: 60px 24px;">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <div class="section-header" style="margin-bottom: 32px;">
+      <div class="section-tag" style="background: rgba(201,147,58,0.2); border-color: rgba(201,147,58,0.4); color: var(--gold-light);">
+        <span class="ml en">Quick Reference</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ඉක්මන් යොමුව</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">விரைவு குறிப்பு</span>
+      </div>
+      <h2 class="section-title" style="color: var(--gold-light);">
+        <span class="ml en">At a Glance</span>
+        <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සාරාංශය</span>
+        <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">சுருக்கம்</span>
+      </h2>
+    </div>
+    <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(201,147,58,0.2); border-radius: 16px; overflow: hidden;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="background: rgba(201,147,58,0.15);">
+            <th style="padding: 12px 16px; text-align: left; color: var(--gold-light); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(201,147,58,0.2);">
+              <span class="ml en">Ritual</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">නැකත</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">சடங்கு</span>
+            </th>
+            <th style="padding: 12px 16px; text-align: center; color: var(--gold-light); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(201,147,58,0.2);">
+              <span class="ml en">Date</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">දිනය</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">தேதி</span>
+            </th>
+            <th style="padding: 12px 16px; text-align: center; color: var(--gold-light); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(201,147,58,0.2);">
+              <span class="ml en">Time</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">වේලාව</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">நேரம்</span>
+            </th>
+            <th style="padding: 12px 16px; text-align: center; color: var(--gold-light); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(201,147,58,0.2);">
+              <span class="ml en">Direction</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">දිශාව</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">திசை</span>
+            </th>
+            <th style="padding: 12px 16px; text-align: center; color: var(--gold-light); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(201,147,58,0.2);">
+              <span class="ml en">Attire</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ඇඳුම</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">உடை</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">Old Year Bath</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ස්නාන</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">குளியல்</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 13</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">—</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">—</td>
+            <td style="padding: 11px 16px; text-align: center; font-size: 18px;">—</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1); background: rgba(255,255,255,0.03);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">New Year Dawn</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">අවුරුදු උදාව</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">புத்தாண்டு</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 14</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">9:32 AM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">—</td>
+            <td style="padding: 11px 16px; text-align: center; font-size: 18px;">—</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">Lighting Hearth</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ආහාර පිසීම</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">சமையல்</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 14</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">10:51 AM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">South 🔴</td>
+            <td style="padding: 11px 16px; text-align: center;" title="Red">🔴</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1); background: rgba(255,255,255,0.03);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">First Meal</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">ආහාර අනුභවය</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">முதல் உணவு</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 14</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">12:06 PM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">South 🔴</td>
+            <td style="padding: 11px 16px; text-align: center;" title="Red">🔴</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">Anointing Bath</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">හිසතෙල්</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">எண்ணெய்</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 15</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">6:55 AM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">East 🟢</td>
+            <td style="padding: 11px 16px; text-align: center;" title="Green">🟢</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(201,147,58,0.1); background: rgba(255,255,255,0.03);">
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">First Day at Work</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">රැකී රක්ෂා</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">வேலை</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 20</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">6:27 AM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">South ⚪</td>
+            <td style="padding: 11px 16px; text-align: center;" title="White">⚪</td>
+          </tr>
+          <tr>
+            <td style="padding: 11px 16px; color: rgba(255,255,255,0.85);">
+              <span class="ml en">First Planting</span>
+              <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">පැළ සිටුවීම</span>
+              <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">நாற்று நடுதல்</span>
+            </td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">Apr 23</td>
+            <td style="padding: 11px 16px; text-align: center; color: var(--gold-light); font-weight: 500;">11:36 AM</td>
+            <td style="padding: 11px 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px;">North 🟡</td>
+            <td style="padding: 11px 16px; text-align: center;" title="Gold">🟡</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-size: 20px; margin-bottom: 10px; color: var(--gold); opacity: 0.6;">✦</div>
+  <div>
+    <span class="ml en">Wishing you a blessed Avurudu 2026 · <span class="gold">සුභ අලුත් අවුරුද්දක් වේවා</span></span>
+    <span class="ml si" style="font-family:'Noto Sans Sinhala',sans-serif">සුභ අලුත් අවුරුද්දක් වේවා · <span class="gold">Avurudu 2026</span></span>
+    <span class="ml ta" style="font-family:'Noto Sans Tamil',sans-serif">இனிய புத்தாண்டு வாழ்த்துக்கள் · <span class="gold">Avurudu 2026</span></span>
+  </div>
+  <div style="margin-top: 8px; font-size: 11px; opacity: 0.4;">All times in Sri Lanka Standard Time (SLST · UTC+5:30)</div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.body.setAttribute('data-active-lang', l);
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.textContent.trim().toLowerCase().includes(
+        l === 'en' ? 'english' : l === 'si' ? 'සිංහල' : 'தமிழ்'
+      ));
+    });
+  }
+
+  // All nakath events — UTC times (SLST = UTC+5:30)
+  const nakath = [
+    {
+      utc: '2026-03-20T00:00:00Z', // no fixed time, just the day
+      en: 'New Moon (Lunar New Year)',
+      si: 'නව සඳ බැලීම (චන්ද්‍ර)',
+      ta: 'புத்த சந்திரன் (சந்திர ஆண்டு)',
+      date: { en: 'March 20 (Fri)', si: 'මාර්. 20 සිකු', ta: 'மார். 20 வெள்' }
+    },
+    {
+      utc: '2026-04-12T18:30:00Z', // Apr 13 midnight SLST = Apr 12 18:30 UTC
+      en: 'Old Year Ritual Bath',
+      si: 'පරණ අවුරුදු ස්නානය',
+      ta: 'பழைய ஆண்டு குளியல்',
+      date: { en: 'April 13 (Mon)', si: 'අප්. 13 සදු', ta: 'ஏப். 13 திங்கள்' }
+    },
+    {
+      utc: '2026-04-14T04:02:00Z', // Apr 14 9:32 AM SLST
+      en: '🌅 New Year Dawn',
+      si: '🌅 අලුත් අවුරුදු උදාව',
+      ta: '🌅 புத்தாண்டு உதயம்',
+      date: { en: 'April 14 · 9:32 AM', si: 'අප්. 14 · පෙ.ව. 9:32', ta: 'ஏப். 14 · காலை 9:32' }
+    },
+    {
+      utc: '2026-04-14T05:11:00Z', // Apr 14 10:51 AM SLST
+      en: 'Light the Hearth · Cook Milk Rice',
+      si: 'ලිප් බැදීම · කිරිබත් පිසීම',
+      ta: 'அடுப்பு வைத்தல் · கிரிபத் சமைத்தல்',
+      date: { en: 'April 14 · 10:51 AM', si: 'අප්. 14 · පෙ.ව. 10:51', ta: 'ஏப். 14 · காலை 10:51' }
+    },
+    {
+      utc: '2026-04-14T06:35:00Z', // Apr 14 12:06 PM SLST
+      en: 'First Meal & Commerce',
+      si: 'ආහාර අනුභවය හා ගනුදෙනු',
+      ta: 'முதல் உணவு மற்றும் வர்த்தகம்',
+      date: { en: 'April 14 · 12:06 PM', si: 'අප්. 14 · ප.ව. 12:06', ta: 'ஏப். 14 · மதியம் 12:06' }
+    },
+    {
+      utc: '2026-04-15T01:24:00Z', // Apr 15 6:55 AM SLST
+      en: 'Anointing & Ritual Bath',
+      si: 'හිසතෙල් ගෑම හා ස්නානය',
+      ta: 'எண்ணெய் தேய்த்தல் மற்றும் குளியல்',
+      date: { en: 'April 15 · 6:55 AM', si: 'අප්. 15 · පෙ.ව. 6:55', ta: 'ஏப். 15 · காலை 6:55' }
+    },
+    {
+      utc: '2026-04-20T00:57:00Z', // Apr 20 6:27 AM SLST
+      en: 'Set Out for Work',
+      si: 'රැකී රක්ෂා සඳහා පිටත් වීම',
+      ta: 'வேலைக்கு புறப்படுதல்',
+      date: { en: 'April 20 · 6:27 AM', si: 'අප්. 20 · පෙ.ව. 6:27', ta: 'ஏப். 20 · காலை 6:27' }
+    },
+    {
+      utc: '2026-04-23T06:06:00Z', // Apr 23 11:36 AM SLST
+      en: 'First Planting',
+      si: 'පැළ සිටුවීම',
+      ta: 'நாற்று நடுதல்',
+      date: { en: 'April 23 · 11:36 AM', si: 'අප්. 23 · පෙ.ව. 11:36', ta: 'ஏප். 23 · காலை 11:36' }
+    }
+  ];
+
+  function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
+
+  function getLang() { return document.body.getAttribute('data-active-lang') || 'en'; }
+
+  function getNextEvent() {
+    const now = Date.now();
+    return nakath.find(e => new Date(e.utc).getTime() > now) || null;
+  }
+
+  function tick() {
+    const lang = getLang();
+    const event = getNextEvent();
+    const nameEl = document.getElementById('cd-event-name');
+    const timeEl = document.getElementById('cd-event-time');
+
+    if (!event) {
+      // All events have passed
+      nameEl.textContent = lang === 'si' ? 'සියලු නැකත් සම්පූර්ණ විය' : lang === 'ta' ? 'அனைத்து நட்சத்திரங்களும் முடிந்தன' : 'All auspicious timings have passed';
+      timeEl.textContent = 'Avurudu 2026 ✦';
+      ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+
+    // Update labels
+    nameEl.style.fontFamily = lang === 'si' ? "'Noto Sans Sinhala', sans-serif" : lang === 'ta' ? "'Noto Sans Tamil', sans-serif" : "'DM Sans', sans-serif";
+    nameEl.textContent = event[lang] || event.en;
+
+    const dateStr = event.date[lang] || event.date.en;
+    timeEl.style.fontFamily = lang === 'si' ? "'Noto Sans Sinhala', sans-serif" : lang === 'ta' ? "'Noto Sans Tamil', sans-serif" : "'DM Sans', sans-serif";
+    const prefix = lang === 'si' ? 'ඊළඟ නැකත · ' : lang === 'ta' ? 'அடுத்த நட்சத்திரம் · ' : 'Next nakath · ';
+    timeEl.innerHTML = prefix + '<span style="color:var(--gold-light);font-weight:500">' + dateStr + '</span>';
+
+    // Countdown
+    const diff = new Date(event.utc) - Date.now();
+    if (diff <= 0) { tick(); return; } // immediately find next
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = pad(d);
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+
+  // Re-render event label when language changes
+  const _origSetLang = setLang;
+  setLang = function(l) { _origSetLang(l); tick(); };
+</script>
+</body>
+</html>
